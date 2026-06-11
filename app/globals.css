@@ -10,6 +10,9 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-primary: #ee7e46;
+  --color-muted: #7d7a73;
+  --color-dark: #1b1b1d;
 }
 
 body {

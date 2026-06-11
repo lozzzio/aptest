@@ -2,6 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import Button from "../ui/Button";
+import FadeIn from "../ui/FadeIn";
 import SectionTitle from "../ui/SectionTitle";
 
 type Status = "idle" | "loading" | "success" | "error";
@@ -50,6 +51,7 @@ export default function Contatti() {
   return (
     <section id="contatti" className="scroll-mt-20 bg-zinc-50 py-20 md:py-28">
       <div className="mx-auto max-w-2xl px-6">
+        <FadeIn>
         <SectionTitle
           eyebrow="Contatti"
           title="Parliamo del tuo progetto"
@@ -67,7 +69,7 @@ export default function Contatti() {
                 name="nome"
                 id="nome"
                 required
-                className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-900 outline-none focus:border-zinc-900 focus:ring-1 focus:ring-zinc-900"
+                className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-900 outline-none focus:border-primary focus:ring-1 focus:ring-primary"
               />
             </div>
             <div>
@@ -79,7 +81,7 @@ export default function Contatti() {
                 name="email"
                 id="email"
                 required
-                className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-900 outline-none focus:border-zinc-900 focus:ring-1 focus:ring-zinc-900"
+                className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-900 outline-none focus:border-primary focus:ring-1 focus:ring-primary"
               />
             </div>
           </div>
@@ -92,7 +94,7 @@ export default function Contatti() {
               type="text"
               name="azienda"
               id="azienda"
-              className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-900 outline-none focus:border-zinc-900 focus:ring-1 focus:ring-zinc-900"
+              className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-900 outline-none focus:border-primary focus:ring-1 focus:ring-primary"
             />
           </div>
 
@@ -105,7 +107,7 @@ export default function Contatti() {
               id="messaggio"
               required
               rows={5}
-              className="w-full resize-none rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-900 outline-none focus:border-zinc-900 focus:ring-1 focus:ring-zinc-900"
+              className="w-full resize-none rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-900 outline-none focus:border-primary focus:ring-1 focus:ring-primary"
             />
           </div>
 
@@ -122,6 +124,7 @@ export default function Contatti() {
             <p className="text-sm font-medium text-red-600">{errorMessage}</p>
           )}
         </form>
+        </FadeIn>
       </div>
     </section>
   );

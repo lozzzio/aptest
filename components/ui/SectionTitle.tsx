@@ -8,7 +8,7 @@ export default function SectionTitle({ eyebrow, title, description }: SectionTit
   return (
     <div className="mx-auto max-w-2xl text-center mb-12 md:mb-16">
       {eyebrow && (
-        <p className="text-sm font-semibold uppercase tracking-wider text-indigo-600 mb-3">
+        <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-3">
           {eyebrow}
         </p>
       )}
@@ -16,7 +16,7 @@ export default function SectionTitle({ eyebrow, title, description }: SectionTit
         {title}
       </h2>
       {description && (
-        <p className="mt-4 text-lg text-zinc-600">{description}</p>
+        <p className="mt-4 text-lg text-muted">{description}</p>
       )}
     </div>
   );

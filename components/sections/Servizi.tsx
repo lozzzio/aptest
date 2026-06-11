@@ -1,5 +1,6 @@
 import SectionTitle from "../ui/SectionTitle";
 import Card from "../ui/Card";
+import FadeIn from "../ui/FadeIn";
 
 const servizi = [
   {
@@ -56,34 +57,38 @@ export default function Servizi() {
   return (
     <section id="servizi" className="scroll-mt-20 bg-zinc-50 py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-6">
-        <SectionTitle
-          eyebrow="Servizi"
-          title="Cosa offriamo"
-          description="Soluzioni concrete pensate per le esigenze reali della tua attività."
-        />
+        <FadeIn>
+          <SectionTitle
+            eyebrow="Servizi"
+            title="Cosa offriamo"
+            description="Soluzioni concrete pensate per le esigenze reali della tua attività."
+          />
+        </FadeIn>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {servizi.map((servizio) => (
-            <Card key={servizio.title}>
-              <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={1.5}
-                  className="h-6 w-6"
-                >
-                  {servizio.icon}
-                </svg>
-              </div>
-              <h3 className="mb-2 text-lg font-semibold text-zinc-900">
-                {servizio.title}
-              </h3>
-              <p className="text-sm leading-relaxed text-zinc-600">
-                {servizio.description}
-              </p>
-            </Card>
+          {servizi.map((servizio, index) => (
+            <FadeIn key={servizio.title} delay={index * 100}>
+              <Card>
+                <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={1.5}
+                    className="h-6 w-6"
+                  >
+                    {servizio.icon}
+                  </svg>
+                </div>
+                <h3 className="mb-2 text-lg font-semibold text-zinc-900">
+                  {servizio.title}
+                </h3>
+                <p className="text-sm leading-relaxed text-muted">
+                  {servizio.description}
+                </p>
+              </Card>
+            </FadeIn>
           ))}
         </div>
       </div>
